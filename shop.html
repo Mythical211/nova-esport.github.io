@@ -1,0 +1,227 @@
+<!-- HAMDAOUI Salim - BAH DIAWO Alpha - 5TD -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA Esport — Boutique</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    main>section:first-of-type {
+      text-align: center;
+      padding: 3.75em 1.25em 1.25em;
+    }
+
+    main>section:first-of-type p {
+      color: var(--gris);
+      margin-top: 0.75em;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header>
+
+    <a href="index.html">
+      <img src="images/nova_logo_transparent (1).svg" alt="Logo NOVA">
+    </a>
+    <nav>
+      <a href="index.html">Boutique</a>
+      <a href="equipe.html">Notre équipe</a>
+      <a href="palmares.html">Palmarès</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div>
+      <button><a href="connexion.html"><i class="fa-solid fa-user"></i></a></button>
+      <button>
+        <a href="shop.html"><i class="fa-solid fa-cart-shopping"></i></a>
+      </button>
+      <button class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="shop.html"><i class="fa-solid fa-cart-shopping"></i> Boutique</a>
+    <a href="palmares.html"><i class="fa-solid fa-trophy"></i> Palmarès</a>
+    <a href="equipe.html"><i class="fa-solid fa-users"></i> Notre équipe</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+    <a href="connexion.html"><i class="fa-solid fa-user"></i>Mon compte</a>
+  </nav>
+
+  <main>
+
+    <section>
+      <p class="etiquette">Drops exclusifs</p>
+      <h1><br>Boutique NOVA</h1>
+      <p>
+        Équipe-toi aux couleurs de la constellation.
+      </p>
+    </section>
+
+    <!-- Filtres (data-filtre est lu par le JS) -->
+    <div class="filtres">
+      <button class="actif" data-filtre="tout">Tout</button>
+      <button data-filtre="maillot">Maillots</button>
+      <button data-filtre="hoodie">Hoodies</button>
+      <button data-filtre="accessoire">Accessoires</button>
+    </div>
+
+    <!--  Chaque .produit a un data-categorie utilisé par le filtre JS. -->
+    <div class="grille-produits">
+
+      <article class="produit" data-categorie="maillot">
+        <img src="images/tshirt-face.png" alt="Maillot officiel NOVA">
+        <div>
+          <span class="etiquette rose">Promo</span>
+          <p>Maillot Officiel NOVA 2025</p>
+          <p>
+            <span>25,99€</span>
+            <s>49,99€</s>
+          </p>
+          <a href="maillot-nova.html" class="bouton plein">Voir le produit</a>
+        </div>
+      </article>
+
+      <article class="produit" data-categorie="hoodie">
+        <img src="https://placehold.co/400x400/110d1f/c084fc?text=HOODIE" alt="Placeholder hoodie">
+        <div>
+          <span class="etiquette verte">Nouveau</span>
+          <p>Hoodie Nova Void</p>
+          <p><span>59,99€</span></p>
+          <!-- onclick appelle la fonction définie dans main.js -->
+          <button class="bouton plein" onclick="ajouterAuPanier('hoodie-void', 'Hoodie Nova Void', 59.99)">
+            Ajouter
+          </button>
+        </div>
+      </article>
+
+      <article class="produit" data-categorie="accessoire">
+        <img src="https://placehold.co/400x400/110d1f/c084fc?text=CASQUETTE" alt="Placeholder casquette">
+        <div>
+          <p>Casquette Nova Core</p>
+          <p>
+            <span>24,99€</span>
+            <s>34,99€</s>
+          </p>
+          <button class="bouton plein" onclick="ajouterAuPanier('casquette', 'Casquette Nova Core', 24.99)">
+            Ajouter
+          </button>
+        </div>
+      </article>
+
+      <article class="produit" data-categorie="accessoire">
+        <img src="https://placehold.co/400x400/110d1f/c084fc?text=MOUSEPAD" alt="Placeholder mousepad">
+        <div>
+          <span class="etiquette or">Bestseller</span>
+          <p>Mousepad Nova XL</p>
+          <p>
+            <span>19,99€</span>
+            <s>29,99€</s>
+          </p>
+          <button class="bouton plein" onclick="ajouterAuPanier('mousepad', 'Mousepad Nova XL', 19.99)">
+            Ajouter
+          </button>
+        </div>
+      </article>
+
+      <article class="produit" data-categorie="maillot">
+        <img src="https://placehold.co/400x400/110d1f/c084fc?text=JERSEY" alt="Placeholder jersey">
+        <div>
+          <span class="etiquette">Édition limitée</span>
+          <p>Jersey Nova Pro 2026</p>
+          <p><span>79,99€</span></p>
+          <button class="bouton plein" onclick="ajouterAuPanier('jersey-pro', 'Jersey Nova Pro 2026', 79.99)">
+            Ajouter
+          </button>
+        </div>
+      </article>
+
+      <article class="produit" data-categorie="hoodie">
+        <img src="https://placehold.co/400x400/110d1f/c084fc?text=T-SHIRT" alt="Placeholder t-shirt">
+        <div>
+          <p>T-shirt Nova Core</p>
+          <p><span>29,99€</span></p>
+          <button class="bouton plein" onclick="ajouterAuPanier('tshirt-core', 'T-shirt Nova Core', 29.99)">
+            Ajouter
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <nav>
+      <section>
+        <strong>NOVA</strong>
+        <em>Born in Starlight</em>
+        <p>L'esport né des étoiles. Rejoins la constellation.</p>
+      </section>
+
+      <section>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="equipe.html">Notre équipe</a></li>
+          <li><a href="equipe.html">Palmarès</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Mon compte</h4>
+        <ul>
+          <li><a href="connexion.html">Mon profil</a></li>
+          <li><a href="#">Mes commandes</a></li>
+          <li><a href="#">Retour & échange</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Nous suivre</h4>
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i> @nova.esport</a></li>
+          <li><a href="#"><i class="fa-brands fa-tiktok"></i> @nova.esport</a></li>
+          <li><a href="#"><i class="fa-brands fa-twitch"></i> twitch.tv/nova_esport</a></li>
+          <li><a href="mailto:contact@nova-esport.com"><i class="fa-solid fa-envelope"></i> contact@nova-esport.com</a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Newsletter</h4>
+        <p>Reçois nos drops exclusifs en avant-première.</p>
+        <form>
+          <input type="email" placeholder="ton@email.com">
+          <button class="bouton plein" type="submit">Rejoindre 🚀</button>
+        </form>
+      </section>
+    </nav>
+
+    <p>© 2026 NOVA ESPORT · Born in Starlight · Tous droits réservés
+
+      <a href="#">· Mentions légales</a>
+      <a href="#">· Politique de confidentialité</a>
+      <a href="#">· CGV</a>
+      <a href="#">· Gestion des cookies</a>
+      <a href="#">· Accessibilité</a>
+
+    </p>
+    <div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

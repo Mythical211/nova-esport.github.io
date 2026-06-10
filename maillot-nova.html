@@ -1,0 +1,235 @@
+<!-- HAMDAOUI Salim - BAH DIAWO Alpha - 5TD -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maillot Officiel NOVA 2025</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    main>p:first-of-type {
+      padding: 1.25em;
+      color: var(--gris);
+      font-size: 0.8125em;
+    }
+
+    .desc-produit {
+      color: var(--gris);
+      margin: 0.75em 0;
+    }
+
+    .etiquette-taille {
+      font-size: 0.8125em;
+      color: var(--gris);
+      font-weight: 600;
+    }
+
+    .garanties {
+      margin-top: 1.25em;
+      font-size: 0.8125em;
+      color: var(--gris);
+    }
+
+    .carac-titre {
+      margin-top: 2em;
+      color: var(--blanc);
+    }
+
+    .table-carac {
+      width: 100%;
+      margin-top: 0.75em;
+      font-size: 0.875em;
+    }
+
+    .td-carac {
+      padding: 0.5em;
+      color: var(--gris);
+    }
+
+    .td-normal {
+      padding: 0.5em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <a href="index.html">
+      <img src="images/nova_logo_transparent (1).svg" alt="Logo NOVA">
+    </a>
+    <nav>
+      <a href="index.html">Boutique</a>
+      <a href="equipe.html">Notre équipe</a>
+      <a href="palmares.html">Palmarès</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div>
+      <button><a href="connexion.html"><i class="fa-solid fa-user"></i></a></button>
+      <button>
+        <a href="shop.html"><i class="fa-solid fa-cart-shopping"></i></a>
+      </button>
+      <button class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <nav>
+    <a href="shop.html"><i class="fa-solid fa-cart-shopping"></i> Boutique</a>
+    <a href="palmares.html"><i class="fa-solid fa-trophy"></i> Palmarès</a>
+    <a href="equipe.html"><i class="fa-solid fa-users"></i> Notre équipe</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+    <a href="connexion.html"><i class="fa-solid fa-user"></i>Mon compte</a>
+  </nav>
+
+  <main>
+
+    <!-- Fil d'Ariane -->
+    <p>
+      <a href="index.html">Accueil</a> &gt;
+      <a href="shop.html">Boutique</a> &gt;
+      Maillot NOVA 2025
+    </p>
+
+
+    <section class="fiche-produit">
+
+
+      <img src="images/tshirt-face.png" alt="Maillot Officiel NOVA 2025">
+
+
+      <div>
+        <p class="etiquette">Édition limitée 2025</p>
+        <h1>Maillot Officiel NOVA 2025</h1>
+
+        <p class="desc-produit">
+          Le jersey porté sur scène par nos joueurs. Tissu technique
+          respirant (100% polyester sublimation), coupe esport ajustée,
+          sérigraphie 360°. Édition limitée à 200 exemplaires.
+        </p>
+
+
+        <p class="prix-grand">
+          25,99€ <s>49,99€</s>
+        </p>
+
+      
+        <p class="etiquette-taille">TAILLE</p>
+        <div class="tailles">
+          <button>XS</button>
+          <button>S</button>
+          <button class="actif">M</button>
+          <button>L</button>
+          <button>XL</button>
+          <button>2XL</button>
+        </div>
+
+        <button class="bouton plein large" onclick="ajouterAuPanier('maillot-2025', 'Maillot NOVA 2025', 25.99)">
+          Ajouter au panier
+        </button>
+
+
+        <p class="garanties">
+          <i class="fa-solid fa-shield-halved"></i> Paiement sécurisé · <i class="fa-solid fa-truck"></i> Livraison
+          rapide · <i class="fa-solid fa-rotate-left"></i> Retour 30 jours
+        </p>
+
+
+        <h2 class="carac-titre">Caractéristiques</h2>
+        <table class="table-carac">
+          <tr>
+            <td class="td-carac">Matière</td>
+            <td class="td-normal">100% Polyester sublimation</td>
+          </tr>
+          <tr>
+            <td class="td-carac">Coupe</td>
+            <td class="td-normal">Esport — ajustée</td>
+          </tr>
+          <tr>
+            <td class="td-carac">Impression</td>
+            <td class="td-normal">Sublimation 360° HD</td>
+          </tr>
+          <tr>
+            <td class="td-carac">Origine</td>
+            <td class="td-normal">Fabriqué en Europe</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <nav>
+      <section>
+        <strong>NOVA</strong>
+        <em>Born in Starlight</em>
+        <p>L'esport né des étoiles. Rejoins la constellation.</p>
+      </section>
+
+      <section>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="equipe.html">Notre équipe</a></li>
+          <li><a href="equipe.html">Palmarès</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Mon compte</h4>
+        <ul>
+          <li><a href="connexion.html">Mon profil</a></li>
+          <li><a href="#">Mes commandes</a></li>
+          <li><a href="#">Retour & échange</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Nous suivre</h4>
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i> @nova.esport</a></li>
+          <li><a href="#"><i class="fa-brands fa-tiktok"></i> @nova.esport</a></li>
+          <li><a href="#"><i class="fa-brands fa-twitch"></i> twitch.tv/nova_esport</a></li>
+          <li><a href="mailto:contact@nova-esport.com"><i class="fa-solid fa-envelope"></i> contact@nova-esport.com</a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Newsletter</h4>
+        <p>Reçois nos drops exclusifs en avant-première.</p>
+        <form>
+          <input type="email" placeholder="ton@email.com">
+          <button class="bouton plein" type="submit">Rejoindre 🚀</button>
+        </form>
+      </section>
+    </nav>
+
+    <p>© 2026 NOVA ESPORT · Born in Starlight · Tous droits réservés
+
+      <a href="#">· Mentions légales</a>
+      <a href="#">· Politique de confidentialité</a>
+      <a href="#">· CGV</a>
+      <a href="#">· Gestion des cookies</a>
+      <a href="#">· Accessibilité</a>
+
+    </p>
+    <div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

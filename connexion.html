@@ -1,0 +1,194 @@
+<!-- HAMDAOUI Salim - BAH DIAWO Alpha - 5TD -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA Esport — Connexion</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    main>section:first-of-type {
+      text-align: center;
+      padding: 3.75em 1.25em 1.25em;
+    }
+
+    main>section:first-of-type p {
+      color: var(--gris);
+      margin-top: 0.75em;
+    }
+
+    label.case-memo {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-weight: 400;
+    }
+
+    .centre-petit {
+      text-align: center;
+      font-size: 0.8125em;
+      color: var(--gris);
+      margin-top: 0.75em;
+    }
+
+    .lien-violet {
+      color: var(--violet-clair);
+    }
+
+    .muted-petit {
+      text-align: center;
+      color: var(--gris-fonce);
+      font-size: 0.75em;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header>
+
+    <a href="index.html">
+      <img src="images/nova_logo_transparent (1).svg" alt="Logo NOVA">
+    </a>
+    <nav>
+      <a href="index.html">Boutique</a>
+      <a href="equipe.html">Notre équipe</a>
+      <a href="palmares.html">Palmarès</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div>
+      <button><a href="connexion.html"><i class="fa-solid fa-user"></i></a></button>
+      <button>
+        <a href="shop.html"><i class="fa-solid fa-cart-shopping"></i></a>
+      </button>
+      <button class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="shop.html"><i class="fa-solid fa-cart-shopping"></i> Boutique</a>
+    <a href="palmares.html"><i class="fa-solid fa-trophy"></i> Palmarès</a>
+    <a href="equipe.html"><i class="fa-solid fa-users"></i> Notre équipe</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+    <a href="connexion.html"><i class="fa-solid fa-user"></i>Mon compte</a>
+  </nav>
+
+  <main>
+
+    <section>
+      <h1>Bienvenue sur NOVA</h1>
+      <p>
+        Connecte-toi pour accéder à ton espace
+      </p>
+    </section>
+
+
+    <form class="formulaire" action="#" onsubmit="event.preventDefault(); alert('Connexion simulée !');">
+
+      <label for="email">Adresse email</label>
+      <input type="email" id="email" placeholder="ton@email.com" required>
+
+      <label for="mdp">Mot de passe</label>
+      <input type="password" id="mdp" placeholder="••••••" required>
+
+
+      <label class="case-memo">
+        <input type="checkbox"> Se souvenir de moi
+      </label>
+
+      <button type="submit" class="bouton plein large">➡️ Se connecter</button>
+
+      <p class="centre-petit">
+        <a href="#" class="lien-violet">Mot de passe oublié ?</a>
+      </p>
+
+
+      <p class="muted-petit">
+        — ou continuer avec —
+      </p>
+
+
+      <button type="button" class="bouton vide large"><i class="fa-brands fa-google"></i> Google</button>
+      <button type="button" class="bouton vide large"><i class="fa-brands fa-discord"></i> Discord</button>
+
+      <p class="centre-petit">
+        Pas encore de compte ?
+        <a href="#" class="lien-violet">Créer un compte</a>
+      </p>
+    </form>
+
+  </main>
+
+  <footer>
+    <nav>
+      <section>
+        <strong>NOVA</strong>
+        <em>Born in Starlight</em>
+        <p>L'esport né des étoiles. Rejoins la constellation.</p>
+      </section>
+
+      <section>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="equipe.html">Notre équipe</a></li>
+          <li><a href="equipe.html">Palmarès</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Mon compte</h4>
+        <ul>
+          <li><a href="connexion.html">Mon profil</a></li>
+          <li><a href="#">Mes commandes</a></li>
+          <li><a href="#">Retour & échange</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Nous suivre</h4>
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i> @nova.esport</a></li>
+          <li><a href="#"><i class="fa-brands fa-tiktok"></i> @nova.esport</a></li>
+          <li><a href="#"><i class="fa-brands fa-twitch"></i> twitch.tv/nova_esport</a></li>
+          <li><a href="mailto:contact@nova-esport.com"><i class="fa-solid fa-envelope"></i> contact@nova-esport.com</a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Newsletter</h4>
+        <p>Reçois nos drops exclusifs en avant-première.</p>
+        <form>
+          <input type="email" placeholder="ton@email.com">
+          <button class="bouton plein" type="submit">Rejoindre 🚀</button>
+        </form>
+      </section>
+    </nav>
+
+    <p>© 2026 NOVA ESPORT · Born in Starlight · Tous droits réservés
+
+      <a href="#">· Mentions légales</a>
+      <a href="#">· Politique de confidentialité</a>
+      <a href="#">· CGV</a>
+      <a href="#">· Gestion des cookies</a>
+      <a href="#">· Accessibilité</a>
+
+    </p>
+    <div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

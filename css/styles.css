@@ -1,0 +1,1104 @@
+/* ═══════════════════════════════════════════════════════════
+HAMDAOUI SALIM - BAH DIAWO ALPHA - 5TD - SITE E-COMMERCE
+   ───────────────────────────────────────────────────────────
+   Organisation du fichier :
+   1. Polices Google 
+   2. Variables :root 
+   3. remise à zéro des styles par défaut du navigateur
+   4. Typographie générale (titres, paragraphes)
+   5. Header (barre du haut, identique sur toutes les pages)
+   6. Menu mobile (hamburger)
+   7. Main (contenu central)
+   8. Footer (bas de page, identique sur toutes les pages)
+   9. Boutons réutilisables
+   10. Étiquettes/badges (Promo, Nouveau...)
+   11. Carte produit (utilisée sur shop.html)
+   12. Pages spécifiques (équipe, contact, connexion, produit)
+   13. Animation "apparition au scroll"
+   14. Media query desktop (≥ 768px)
+   15. Cookies
+═══════════════════════════════════════════════════════════ */
+
+
+@import url('[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Josefin+Sans:wght@400;600;700&display=swap)');
+
+
+:root {
+  /* Couleurs principales */
+  --violet: #a855f7;
+  --violet-clair: #c084fc;
+  --violet-fonce: #7c3aed;
+
+  /* Couleurs de fond */
+  --fond: #0a0015;
+  --carte: #110d1f;
+  --carte2: #180f2e;
+
+  /* Couleurs de texte */
+  --blanc: #ffffff;
+  --texte: #e8e0f5;
+  --gris: #8b7aaa;
+  --gris-fonce: #5a4d72;
+
+  /* Couleurs d'accent */
+  --cyan: #00ffc8;
+  --rose: #e879f9;
+  --or: #fbbf24;
+  --vert: #22c55e;
+  --rouge: #f87171;
+
+  /* Tailles */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', 'Inter', sans-serif;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--fond);
+  color: var(--texte);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+/* ─── 4. TYPOGRAPHIE ─────────────────────────────────────── */
+/* clamp(min, idéal, max) = taille responsive automatique. */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(1.75em, 2.5em, 3.5em);
+}
+
+h2 {
+  font-size: clamp(1.25em, 1.5em, 2em);
+}
+
+h3 {
+  font-size: clamp(1em, 1.25em, 1.25em);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   5. HEADER 
+═══════════════════════════════════════════════════════════ */
+body>header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4em;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+  background: var(--fond);
+  backdrop-filter: blur(0.75em);
+  border-bottom: 0.0625em solid #ac59fa33;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Quand on a scrollé → header plus opaque */
+
+body>header.scrolle {
+  background: var(--fond);
+  box-shadow: 0 0 1.875em var(--violet-fonce);
+}
+
+header>a {
+  display: flex;
+  align-items: center;
+  gap: 0.625em;
+}
+
+header>a>img {
+  height: 2.6em;
+}
+
+/* Menu desktop caché sur mobile */
+header>nav {
+  display: none;
+  align-items: center;
+  gap: 0.25em;
+}
+
+header>nav>a {
+  padding: 0.5em 0.875em;
+  border-radius: 0.5em;
+  font-size: 0.875em;
+  font-weight: 600;
+  color: var(--gris);
+  transition: color 0.2s, background 0.2s;
+  position: relative;
+}
+
+/* Petit trait violet qui apparaît au survol  */
+header>nav>a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0.125em;
+  bottom: 0.125em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--violet);
+  transition: width 0.3s;
+  border-radius: 0.125em;
+}
+
+header>nav>a:hover,
+header>nav>a.actif {
+  color: var(--blanc);
+  background: var(--fond);
+}
+
+header>nav>a:hover::after,
+header>nav>a.actif::after {
+  width: 60%;
+}
+
+/* Bloc des icônes à droite (compte, panier, hamburger) */
+header>div {
+  display: flex;
+  align-items: center;
+  gap: 0.375em;
+}
+
+header>div>button {
+  width: 2.375em;
+  height: 2.375em;
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gris);
+  font-size: 1.0625em;
+  transition: color 0.2s, background 0.2s;
+  position: relative;
+}
+
+header>div>button:hover {
+  color: var(--blanc);
+  background: #a855f71f;
+}
+
+/* Bouton menu hamburger */
+.hamburger {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger>span {
+  position: static;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--texte);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s, width 0.3s;
+}
+
+/* Quand le menu est ouvert on transforme les 3 traits en croix */
+.hamburger.ouvert>span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.ouvert>span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburger.ouvert>span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   6. Menu déroulant hamburger
+═══════════════════════════════════════════════════════════ */
+
+body>nav {
+  position: fixed;
+  top: var(--hauteur-header);
+  left: 0;
+  right: 0;
+  background: var(--carte);
+  backdrop-filter: blur(1em);
+  border-bottom: 0.0625em solid var(--violet);
+  padding: 0.5em 1.25em 1.25em;
+  z-index: 999;
+  transform: translateY(-110%);
+  opacity: 0;
+  transition: transform 0.35s, opacity 0.35s;
+}
+
+.ouvert {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+body>nav>a {
+  display: flex;
+  align-items: center;
+  gap: 0.875em;
+  padding: 1em 0.25em;
+  border-bottom: 0.0625em solid #ac59fa33;
+  font-size: 0.9375em;
+  font-weight: 600;
+  color: var(--gris);
+}
+
+body>nav>a:last-child {
+  border-bottom: none;
+}
+
+body>nav>a:hover,
+.actif {
+  color: var(--blanc);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   7. MAIN 
+═══════════════════════════════════════════════════════════ */
+/* Décalage du haut pour compenser le header fixé */
+
+main {
+  padding-top: 4em;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   8. FOOTER 
+═══════════════════════════════════════════════ */
+footer {
+  background: var(--carte);
+  border-top: 0.0625em solid var(--violet);
+  padding: 2em 1.25em 1.25em;
+}
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em 1em;
+  margin-bottom: 1.5em;
+}
+
+footer nav section:first-child {
+  flex: 1 1 100%;
+}
+
+footer nav section {
+  flex: 1 1 calc(50% - 0.5em);
+  border-top: 0.0625em solid var(--violet);
+  padding-top: 1.25em;
+}
+
+footer nav section:last-child {
+  flex: 1 1 100%;
+}
+
+footer nav form {
+  display: flex;
+  gap: 0.5em;
+  margin-top: 0.75em;
+}
+
+footer nav form input {
+  background: var(--carte2);
+  border: 0.0625em solid var(--violet);
+  border-radius: 0.375em;
+  padding: 1em 0.6em;
+  font-size: 0.8125em;
+}
+
+
+footer nav strong {
+  display: block;
+  font-size: 1.25em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+footer nav em {
+  display: block;
+  font-size: 0.7em;
+  color: var(--violet-clair);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-style: normal;
+  margin-bottom: 0.5em;
+}
+
+footer nav section:first-child p {
+  font-size: 0.8125em;
+  color: var(--gris);
+  line-height: 1.6;
+}
+
+footer nav h4 {
+  color: var(--violet-clair);
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75em;
+}
+
+footer nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer nav ul li {
+  margin-bottom: 0.4em;
+}
+
+footer nav a {
+  color: var(--gris);
+  text-decoration: none;
+  font-size: 0.8125em;
+  transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+  color: var(--violet-clair);
+}
+
+footer>p {
+  text-align: center;
+  font-size: 0.7em;
+  border-top: 0.0625em solid #a855f780;
+  padding-top: 1.25em;
+  margin: 0;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   9. BOUTONS (RÉUTILISABLES sur tout le site)
+═════════════════════════════════════════════ */
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.75em 1.5em;
+  border-radius: 0.625em;
+  font-size: 0.875em;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.bouton:hover {
+  transform: translateY(-0.125em);
+}
+
+.bouton:active {
+  transform: none;
+}
+
+/* Variantes */
+.bouton.plein {
+  background: var(--violet);
+  color: var(--blanc);
+  border: 0.09375em solid var(--violet);
+  box-shadow: 0 0.25em 1.25em var(--fond);
+}
+
+.bouton.plein:hover {
+  background: var(--violet-fonce);
+}
+
+.bouton.vide {
+  background: transparent;
+  color: var(--violet-clair);
+  border: 0.09375em solid var(--violet);
+}
+
+.bouton.vide:hover {
+  background: var(--fond);
+}
+
+.bouton.large {
+  width: 100%;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   10. ÉTIQUETTES / BADGES (Promo, Nouveau, Bestseller...)
+═══════════════════════════════════════════════════════════ */
+.etiquette {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  padding: 0.25em 0.6875em;
+  border-radius: 1.25em;
+  font-size: 0.6875em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--fond);
+  color: var(--violet-clair);
+  border: 0.0625em solid var(--violet);
+}
+
+/* Variantes de couleur */
+.etiquette.verte {
+  background: #22c55e26;
+  color: var(--vert);
+  border-color: #22c55e4d;
+}
+
+.etiquette.rose {
+  background: #e879f926;
+  color: var(--rose);
+  border-color: #e879f94d;
+}
+
+.etiquette.or {
+  background: #fbbf2426;
+  color: var(--or);
+  border-color: #fbbf244d;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   11. CARTE PRODUIT 
+═══════════════════════════════════════════════ */
+.produit {
+  background: var(--carte);
+  border: 0.0625em solid #ac59fa33;
+  border-radius: 1em;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.produit:hover {
+  border-color: #a855f780;
+  box-shadow: 0 0.5em 2em #a855f740;
+  transform: translateY(-0.25em);
+}
+
+/* Image du produit (premier enfant) */
+.produit>img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: filter 0.3s, transform 0.4s;
+}
+
+.produit:hover>img {
+  filter: grayscale(0);
+  transform: scale(1.04);
+}
+
+/* Contenu texte sous l'image (div) */
+.produit>div {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.produit>div>p {
+  font-size: 0.9375em;
+  font-weight: 700;
+}
+
+.bouton {
+  margin-top: auto;
+}
+
+.etiquette {
+  align-self: flex-start;
+}
+
+/* Bloc prix */
+.produit>div>p:last-of-type {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  font-size: 1.0625em;
+  font-weight: 800;
+  color: var(--violet-clair);
+}
+
+.produit s {
+  font-size: 0.8125em;
+  color: var(--gris-fonce);
+  font-weight: 400;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   12. PAGES SPÉCIFIQUES
+═══════════════════════════════════════════════════════════ */
+
+/* ─── Grille boutique ─── */
+.grille-produits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  padding: 1.25em;
+}
+
+/* Filtres au-dessus de la boutique */
+.filtres {
+  display: flex;
+  gap: 0.5em;
+  padding: 1.25em;
+  flex-wrap: wrap;
+}
+
+.filtres button {
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  background: var(--carte);
+  color: var(--gris);
+  font-size: 0.8125em;
+  border: 0.0625em solid #ac59fa33;
+}
+
+.filtres button.actif {
+  background: var(--violet);
+  color: var(--blanc);
+  border-color: var(--violet);
+}
+
+/* ─── Page produit (fiche détaillée) ─── */
+.fiche-produit {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  padding: 1.25em;
+  max-width: 68.75em;
+  margin: 0 auto;
+}
+
+.fiche-produit img {
+  border-radius: 1em;
+  border: 0.0625em solid #ac59fa33;
+}
+
+.fiche-produit h1 {
+  color: var(--blanc);
+  margin: 0.75em 0;
+}
+
+/* Bloc prix de la fiche produit */
+.prix-grand {
+  font-size: 2em;
+  font-weight: 800;
+  color: var(--violet-clair);
+  margin: 1em 0;
+}
+
+.prix-grand s {
+  font-size: 1.125em;
+  color: var(--gris-fonce);
+  margin-left: 0.5em;
+}
+
+/* Sélecteur de taille */
+.tailles {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  margin: 1em 0;
+}
+
+.tailles button {
+  width: 3em;
+  height: 3em;
+  border-radius: 0.5em;
+  background: var(--carte);
+  border: 0.0625em solid #ac59fa33;
+  color: var(--texte);
+  font-weight: 700;
+}
+
+.tailles button.actif {
+  background: var(--violet);
+  border-color: var(--violet);
+  color: var(--blanc);
+}
+
+/* ─── Page équipe ─── */
+.grille-joueurs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  padding: 1.25em;
+}
+
+.joueur {
+  background: var(--carte);
+  border: 0.0625em solid #ac59fa33;
+  border-radius: 1em;
+  padding: 1.25em;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.joueur:hover {
+  transform: translateY(-0.25em);
+  border-color: #a855f780;
+}
+
+.joueur h3 {
+  color: var(--blanc);
+  margin: 0.75em 0 0.25em;
+  letter-spacing: 0.1em;
+}
+
+.joueur small {
+  display: block;
+  color: var(--violet-clair);
+  font-size: 0.6875em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+
+/* Statistiques (12+ tournois, 500K supporters...) */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75em;
+  padding: 1.25em;
+  text-align: center;
+}
+
+.stats>div {
+  background: var(--carte);
+  border: 0.0625em solid #ac59fa33;
+  border-radius: 0.75em;
+  padding: 1em 0.5em;
+}
+
+.stats h3 {
+  color: var(--violet-clair);
+  font-size: 1.5em;
+}
+
+.stats p {
+  font-size: 0.625em;
+  color: var(--gris);
+  letter-spacing: 0.1em;
+}
+
+/* ─── Page contact / connexion (formulaires) ─── */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875em;
+  max-width: 30em;
+  margin: 2.5em auto;
+  padding: 1.5em;
+  background: var(--carte);
+  border: 0.0625em solid #ac59fa33;
+  border-radius: 1em;
+}
+
+form label {
+  font-size: 0.8125em;
+  color: var(--gris);
+  font-weight: 600;
+}
+
+form input,
+form textarea {
+  background: var(--carte2);
+  border: 0.0625em solid #a855f780;
+  border-radius: 0.625em;
+  padding: 0.75em 1em;
+  color: var(--texte);
+  font-size: 0.875em;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--violet);
+}
+
+form textarea {
+  min-height: 7.5em;
+  resize: vertical;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   13. ANIMATION "APPARITION AU SCROLL"
+═══════════════════════════════════════════════════════════ */
+/* Classe ajoutée par le JS quand l'élément entre dans l'écran */
+.apparait {
+  opacity: 0;
+  transform: translateY(1.5em);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.apparait.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   14. RESPONSIVE DESKTOP (≥ 768px = tablettes & ordinateurs)
+═══════════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+
+  header {
+    padding: 0 2em;
+  }
+
+  header>div>button.hamburger {
+    display: none;
+  }
+
+  header>nav {
+    display: flex;
+  }
+
+
+  .grille-produits {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .grille-produits>.produit {
+    flex: 0 1 calc(25% - 0.75em);
+  }
+
+
+  .fiche-produit {
+    display: flex;
+  }
+
+  .fiche-produit>* {
+    flex: 1;
+  }
+
+
+  .grille-joueurs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .grille-joueurs>.joueur {
+    flex: 0 1 calc(33.333% - 0.666em);
+  }
+
+  footer nav {
+    justify-content: space-between;
+  }
+
+  footer nav section {
+    flex: 1;
+  }
+
+  footer nav section:first-child,
+  footer nav section:last-child {
+    flex-basis: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   15. COOKIES
+═══════════════════════════════════════════════════════════ */
+#cookie-banner {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  background: rgba(10, 0, 21, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+#cookie-banner>div {
+  width: min(100%, 55em);
+  background: var(--carte2);
+  border: 0.125em solid var(--violet);
+  border-radius: 1.25em;
+  padding: 1.5em;
+  display: grid;
+  gap: 1.25em;
+}
+
+#cookie-banner>div>div:first-child {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+#cookie-banner>div>div:first-child i {
+  color: var(--or);
+  font-size: 1.75em;
+  min-width: 2.25em;
+}
+
+#cookie-banner>div>div:first-child p {
+  color: var(--gris);
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+#cookie-banner>div>div:first-child a {
+  display: inline-block;
+  margin-top: 0.75em;
+  color: var(--violet-clair);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+#cookie-banner>div>div:last-child {
+  display: flex;
+  gap: 0.75em;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+#cookie-banner button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.25em;
+  border-radius: 0.75em;
+  border: 0.0625em solid transparent;
+  font-weight: 700;
+  font-size: 0.95em;
+  min-width: 10em;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#cookie-banner button#cookie-refuse {
+  color: var(--gris);
+  border-color: var(--gris-fonce);
+  background: transparent;
+}
+
+#cookie-banner button#cookie-accept {
+  background: var(--violet);
+  color: var(--blanc);
+}
+
+#cookie-banner button:hover {
+  transform: translateY(-0.08em);
+}
+
+#cookie-banner.hidden {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #cookie-banner {
+    align-items: flex-end;
+    padding: 0.75em;
+  }
+
+  #cookie-banner>div {
+    width: 100%;
+    border-radius: 1em;
+    padding: 1.25em;
+  }
+
+  #cookie-banner>div>div:first-child {
+    flex-direction: column;
+  }
+
+  #cookie-banner>div>div:last-child {
+    justify-content: stretch;
+  }
+
+  #cookie-banner button {
+    width: 100%;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   15. BARRE DE GESTION DES COOKIES
+═══════════════════════════════════════════════════════════ */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--carte2);
+  border-top: 0.125em solid var(--violet);
+  padding: 1.25em;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cookie-content {
+  max-width: 68.75em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+
+.cookie-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  flex: 1;
+  min-width: 15.625em;
+}
+
+.cookie-text i {
+  color: var(--or);
+  font-size: 1.5em;
+  margin-top: 0.25em;
+  flex-shrink: 0;
+}
+
+.cookie-text p {
+  font-size: 0.9375em;
+  color: var(--gris);
+  line-height: 1.5;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 0.75em;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.75em 1.25em;
+  border-radius: 0.375em;
+  font-size: 0.9375em;
+  font-weight: 600;
+  border: 0.0625em solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.cookie-btn i {
+  font-size: 0.875em;
+}
+
+.cookie-btn.refuse {
+  background: transparent;
+  color: var(--gris);
+  border-color: var(--gris-fonce);
+}
+
+.cookie-btn.refuse:hover {
+  background: var(--gris-fonce);
+  color: var(--blanc);
+}
+
+.cookie-btn.accept {
+  background: var(--violet);
+  color: var(--blanc);
+}
+
+.cookie-btn.accept:hover {
+  background: var(--violet-clair);
+  transform: translateY(-0.125em);
+  box-shadow: 0 0.5em 1.5em #a855f740;
+}
+
+.cookie-banner.hidden {
+  display: none;
+}
+
+
+@media (max-width: 767px) {
+  .cookie-banner {
+    padding: 1em;
+  }
+
+  .cookie-content {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .cookie-text {
+    width: 100%;
+  }
+
+  .cookie-buttons {
+    width: 100%;
+  }
+
+  .cookie-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}

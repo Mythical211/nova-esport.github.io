@@ -1,0 +1,222 @@
+<!-- HAMDAOUI Salim - BAH DIAWO Alpha - 5TD -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA Esport — Contact</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    main>section:first-of-type {
+      text-align: center;
+      padding: 3.75em 1.25em 1.25em;
+    }
+
+    main>section:first-of-type p {
+      color: var(--gris);
+      margin-top: 0.75em;
+      max-width: 31.25em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .grille-contact {
+      padding: 1.25em;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1em;
+      max-width: 31.25em;
+      margin: 0 auto;
+    }
+
+    .carte {
+      background: var(--carte);
+      border: 1px solid var(--bordure);
+      border-radius: 0.75em;
+      padding: 1.25em;
+    }
+
+    .titre-carte {
+      color: var(--violet-clair);
+    }
+
+    .p-carte {
+      color: var(--gris);
+      margin-top: 0.5em;
+    }
+
+    .titre-form {
+      color: var(--blanc);
+      text-align: center;
+    }
+
+    .muted-centre {
+      font-size: 0.75em;
+      color: var(--gris-fonce);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <a href="index.html">
+      <img src="images/nova_logo_transparent (1).svg" alt="Logo NOVA">
+    </a>
+    <nav>
+      <a href="index.html">Boutique</a>
+      <a href="equipe.html">Notre équipe</a>
+      <a href="palmares.html">Palmarès</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div>
+      <button><a href="connexion.html"><i class="fa-solid fa-user"></i></a></button>
+      <button>
+        <a href="shop.html"><i class="fa-solid fa-cart-shopping"></i></a>
+      </button>
+      <button class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <nav>
+    <a href="shop.html"><i class="fa-solid fa-cart-shopping"></i> Boutique</a>
+    <a href="palmares.html"><i class="fa-solid fa-trophy"></i> Palmarès</a>
+    <a href="equipe.html"><i class="fa-solid fa-users"></i> Notre équipe</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+    <a href="connexion.html"><i class="fa-solid fa-user"></i>Mon compte</a>
+  </nav>
+
+  <main>
+
+
+    <section>
+      <p class="etiquette">On est là</p>
+      <h1> <br>Contact</h1>
+      <p>
+        Une question, un partenariat, une candidature ? On répond dans les 48h.
+      </p>
+    </section>
+
+
+    <section class="grille-contact">
+      <div class="carte">
+        <h3 class="titre-carte"><i class="fa-solid fa-envelope"></i> Email général</h3>
+        <p class="p-carte">
+          <a href="mailto:contact@nova-esport.com">contact@nova-esport.com</a>
+        </p>
+      </div>
+      <div class="carte">
+        <h3 class="titre-carte"><i class="fa-solid fa-briefcase"></i> Partenariats</h3>
+        <p class="p-carte">
+          <a href="mailto:partners@nova-esport.com">partners@nova-esport.com</a>
+        </p>
+      </div>
+      <div class="carte">
+        <h3 class="titre-carte"><i class="fa-brands fa-discord"></i> Discord</h3>
+        <p class="p-carte">
+          <a href="https://discord.gg/nova-esport">discord.gg/nova-esport</a>
+        </p>
+      </div>
+    </section>
+
+    <form class="formulaire" action="#" onsubmit="event.preventDefault(); alert('Message envoyé !');">
+
+
+      <label for="prenom">Prénom Nom</label>
+      <input type="text" id="prenom" required>
+
+      <label for="email">Adresse email</label>
+      <input type="email" id="email" required>
+
+      <label for="sujet">Sujet</label>
+      <input type="text" id="sujet" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" required></textarea>
+
+      <button type="submit" class="bouton plein large">Envoyer le message</button>
+
+      <h2 class="titre-form">Envoie-nous un message</h2>
+      <p class="muted-centre">
+        En soumettant ce formulaire tu acceptes notre politique de confidentialité.
+      </p>
+    </form>
+
+  </main>
+
+
+  <footer>
+    <nav>
+      <section>
+        <strong>NOVA</strong>
+        <em>Born in Starlight</em>
+        <p>L'esport né des étoiles. Rejoins la constellation.</p>
+      </section>
+
+      <section>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="equipe.html">Notre équipe</a></li>
+          <li><a href="equipe.html">Palmarès</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Mon compte</h4>
+        <ul>
+          <li><a href="connexion.html">Mon profil</a></li>
+          <li><a href="#">Mes commandes</a></li>
+          <li><a href="#">Retour & échange</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Nous suivre</h4>
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i> @nova.esport</a></li>
+          <li><a href="#"><i class="fa-brands fa-tiktok"></i> @nova.esport</a></li>
+          <li><a href="#"><i class="fa-brands fa-twitch"></i> twitch.tv/nova_esport</a></li>
+          <li><a href="mailto:contact@nova-esport.com"><i class="fa-solid fa-envelope"></i> contact@nova-esport.com</a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Newsletter</h4>
+        <p>Reçois nos drops exclusifs en avant-première.</p>
+        <form>
+          <input type="email" placeholder="ton@email.com">
+          <button class="bouton plein" type="submit">Rejoindre 🚀</button>
+        </form>
+      </section>
+    </nav>
+
+    <p>© 2026 NOVA ESPORT · Born in Starlight · Tous droits réservés
+
+      <a href="#">· Mentions légales</a>
+      <a href="#">· Politique de confidentialité</a>
+      <a href="#">· CGV</a>
+      <a href="#">· Gestion des cookies</a>
+      <a href="#">· Accessibilité</a>
+
+    </p>
+    <div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
